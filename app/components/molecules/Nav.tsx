@@ -1,8 +1,13 @@
+import { NavLink } from '~/components/atoms';
+
 const Nav = () => {
   return (
-    <div>
-      <p>Nav Component</p>
-    </div>
+    <nav>
+      <ul className='grid grid-flow-col gap-2'>
+        <NavLink href='/'>Home</NavLink>
+        <NavLink href='/about'>About</NavLink>
+      </ul>
+    </nav>
   );
 };
 
