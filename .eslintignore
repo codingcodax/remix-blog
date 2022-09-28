@@ -5,4 +5,6 @@ yarn.lock
 package-lock.json
 public
 .vscode
+remix.env.d.ts
+app/entry.server.tsx
 
