@@ -7,6 +7,7 @@ const Footer = () => {
           href='https://www.codingcodax.dev/'
           target='_about'
           rel='noopener noreferrer'
+          className='text-indigo-700 hover:underline'
         >
           codingcodax
         </a>{' '}
