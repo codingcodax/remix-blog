@@ -1,17 +1,24 @@
 import type { FC, ReactNode } from 'react';
-import { Link } from '@remix-run/react';
+import { NavLink } from '@remix-run/react';
 
 interface NavLinkProps {
   href: string;
   children: ReactNode;
 }
 
-const NavLink: FC<NavLinkProps> = ({ href, children }) => {
+const NavLinkItem: FC<NavLinkProps> = ({ href, children }) => {
+  const activeClassname = 'text-indigo-700';
+
   return (
     <li className='duration-300 hover:text-indigo-700'>
-      <Link to={href}>{children}</Link>
+      <NavLink
+        to={href}
+        className={({ isActive }) => (isActive ? activeClassname : '')}
+      >
+        {children}
+      </NavLink>
     </li>
   );
 };
 
-export default NavLink;
+export default NavLinkItem;
