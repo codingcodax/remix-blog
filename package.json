@@ -3,7 +3,10 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev"
+    "dev": "remix dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier -w ."
   },
   "dependencies": {
     "@remix-run/node": "^1.7.2",
