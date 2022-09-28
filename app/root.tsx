@@ -3,12 +3,12 @@ import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
 
 import styles from '~/styles/app.css';
+import { Layout } from '~/components/templates';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -28,7 +28,7 @@ const App = () => {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Layout />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
