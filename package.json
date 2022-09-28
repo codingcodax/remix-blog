@@ -22,6 +22,7 @@
     "@remix-run/serve": "^1.7.2",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.23.1",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
@@ -33,5 +34,10 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
