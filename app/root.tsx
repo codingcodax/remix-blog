@@ -22,12 +22,12 @@ export const links = () => {
 
 const App = () => {
   return (
-    <html lang='en'>
+    <html lang='en' className='h-full'>
       <head>
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className='py-2 px-4 h-full'>
         <Layout />
         <ScrollRestoration />
         <Scripts />
