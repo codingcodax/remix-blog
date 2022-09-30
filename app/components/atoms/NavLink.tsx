@@ -7,10 +7,10 @@ interface NavLinkProps {
 }
 
 const NavLinkItem: FC<NavLinkProps> = ({ href, children }) => {
-  const activeClassname = 'text-indigo-700';
+  const activeClassname = 'btn btn-active btn-primary';
 
   return (
-    <li className='duration-300 hover:text-indigo-700'>
+    <li>
       <NavLink
         to={href}
         className={({ isActive }) => (isActive ? activeClassname : '')}
