@@ -1,24 +1,17 @@
 import type { FC, ReactNode } from 'react';
-import { NavLink } from '@remix-run/react';
+import { NavLink as RemixNavLink } from '@remix-run/react';
 
 interface NavLinkProps {
-  href: string;
+  to: string;
   children: ReactNode;
 }
 
-const NavLinkItem: FC<NavLinkProps> = ({ href, children }) => {
-  const activeClassname = 'btn btn-active btn-primary';
-
+const NavLink: FC<NavLinkProps> = ({ to, children }) => {
   return (
     <li>
-      <NavLink
-        to={href}
-        className={({ isActive }) => (isActive ? activeClassname : '')}
-      >
-        {children}
-      </NavLink>
+      <RemixNavLink to={to}>{children}</RemixNavLink>
     </li>
   );
 };
 
-export default NavLinkItem;
+export default NavLink;
