@@ -1,9 +1,10 @@
 import { useLoaderData } from '@remix-run/react';
+import type { LoaderFunction } from '@remix-run/node';
 import type { Post } from '@prisma/client';
 
 import { db } from '~/services/db';
 
-export const loader = async () => {
+export const loader: LoaderFunction = async () => {
   const posts = await db.post.findMany();
 
   return { posts };
@@ -14,8 +15,6 @@ const Posts = () => {
 
   return (
     <div>
-      <p>Post Component</p>
-
       {posts.map(({ id, title, body }) => (
         <div key={id}>
           <h2>{title}</h2>
