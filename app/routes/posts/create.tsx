@@ -31,6 +31,7 @@ const Create = () => {
           name='title'
           id='title'
           placeholder='Title'
+          required
         />
 
         <label className='label' htmlFor='body'>
@@ -41,9 +42,10 @@ const Create = () => {
           name='body'
           id='body'
           placeholder='Content'
+          required
         />
 
-        <button type='submit' className='btn w-full'>
+        <button type='submit' className='btn w-full mt-2'>
           Add new post
         </button>
       </Form>
