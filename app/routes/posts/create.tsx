@@ -1,6 +1,6 @@
 import type { ActionFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
-import { Form } from '@remix-run/react';
+import { Form, useTransition } from '@remix-run/react';
 
 import { db } from '~/services/db';
 
@@ -17,6 +17,9 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 const Create = () => {
+  const { state } = useTransition();
+  const isSubmitting = state === 'submitting';
+
   return (
     <div className='prose'>
       <h2>Create new post</h2>
@@ -45,8 +48,12 @@ const Create = () => {
           required
         />
 
-        <button type='submit' className='btn w-full mt-2'>
-          Add new post
+        <button
+          type='submit'
+          className='btn w-full mt-2'
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Creating post...' : 'Create post'}
         </button>
       </Form>
     </div>
