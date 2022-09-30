@@ -18,17 +18,34 @@ export const action: ActionFunction = async ({ request }) => {
 
 const Create = () => {
   return (
-    <div>
+    <div className='prose'>
       <h2>Create new post</h2>
 
-      <Form method='post'>
-        <label htmlFor='title'>Title</label>
-        <input type='text' name='title' id='title' />
+      <Form method='post' className='max-w-xs grid gap-y-2'>
+        <label className='label' htmlFor='title'>
+          <span className='label-text'>What is the title?</span>
+        </label>
+        <input
+          className='input input-bordered w-full'
+          type='text'
+          name='title'
+          id='title'
+          placeholder='Title'
+        />
 
-        <label htmlFor='body'>Body</label>
-        <textarea name='body' id='body' />
+        <label className='label' htmlFor='body'>
+          <span className='label-text'>Your content</span>
+        </label>
+        <textarea
+          className='textarea textarea-bordered h-24 w-full'
+          name='body'
+          id='body'
+          placeholder='Content'
+        />
 
-        <button type='submit'>Add new post</button>
+        <button type='submit' className='btn w-full'>
+          Add new post
+        </button>
       </Form>
     </div>
   );
