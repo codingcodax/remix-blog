@@ -4,7 +4,7 @@ import { Nav } from '~/components//molecules';
 
 const Header = () => {
   return (
-    <header className='navbar bg-base-200 rounded-lg mx-auto container lg'>
+    <header className='navbar bg-base-200 rounded-lg mx-auto max-w-lg'>
       <div className='flex-1'>
         <Link to='/' className='btn btn-ghost normal-case text-xl'>
           codingcodax

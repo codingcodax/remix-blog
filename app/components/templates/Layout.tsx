@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <div className='h-full grid grid-rows-[auto_1fr_auto] gap-y-8'>
       <Header />
-      <div className='container mx-auto'>
+      <div className='container mx-auto max-w-lg'>
         <Outlet />
       </div>
       <Footer />
