@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction } from '@remix-run/node';
 import type { Post } from '@prisma/client';
 
@@ -14,10 +14,15 @@ const Posts = () => {
   const { posts } = useLoaderData<{ posts: Post[] }>();
 
   return (
-    <div>
+    <div className='grid gap-4'>
       {posts.map(({ id, title, body }) => (
-        <div key={id}>
-          <h2>{title}</h2>
+        <div key={id} className='p-4 rounded-md bg-base-200'>
+          <Link
+            to={`/posts/${id}`}
+            className='text-xl font-bold duration-200 hover:text-primary'
+          >
+            {title}
+          </Link>
           <p>{body}</p>
         </div>
       ))}
