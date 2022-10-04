@@ -5,7 +5,7 @@ import { Footer } from '~/components/atoms';
 
 const Layout = () => {
   return (
-    <div className='h-full grid grid-rows-[auto_1fr_auto] gap-y-2'>
+    <div className='h-full grid grid-rows-[auto_1fr_auto] gap-y-8'>
       <Header />
       <div className='container mx-auto'>
         <Outlet />
