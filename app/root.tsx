@@ -27,7 +27,7 @@ const App = () => {
         <Meta />
         <Links />
       </head>
-      <body className='py-2 px-4 h-full'>
+      <body className='py-2 px-4 h-full overflow-x-hidden'>
         <Layout />
         <ScrollRestoration />
         <Scripts />
