@@ -1,8 +1,12 @@
-import type { ActionFunction } from '@remix-run/node';
+import type { ActionFunction, MetaFunction } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
 import { Form, useActionData, useTransition } from '@remix-run/react';
 
 import { db } from '~/services/db';
+
+export const meta: MetaFunction = () => ({
+  title: 'Create Post | codingcoax',
+});
 
 export const action: ActionFunction = async ({ request }) => {
   const form = await request.formData();
@@ -32,9 +36,9 @@ const Create = () => {
 
   return (
     <div className='prose'>
-      <h2>Create new post</h2>
+      <h1>Create new post</h1>
 
-      <Form method='post' className='max-w-xs'>
+      <Form method='post'>
         <div className='form-control'>
           <label className='label' htmlFor='title'>
             <span className='label-text'>What is the title?</span>

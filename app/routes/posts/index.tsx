@@ -1,8 +1,12 @@
 import { Link, useLoaderData } from '@remix-run/react';
-import type { LoaderFunction } from '@remix-run/node';
+import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import type { Post } from '@prisma/client';
 
 import { db } from '~/services/db';
+
+export const meta: MetaFunction = () => ({
+  title: 'Posts | codingcodax',
+});
 
 export const loader: LoaderFunction = async () => {
   const posts = await db.post.findMany();
